@@ -8,7 +8,6 @@
   <title>Strong Web — Websites at a fair price</title>
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23101e34'/%3E%3Cpath d='M10 8h13v4H12v2h8a5 5 0 0 1 0 10H7v-4h13v-2h-8a5 5 0 0 1-2-10z' fill='%23d5ef95'/%3E%3C/svg%3E">
   <link rel="stylesheet" href="styles.css">
-  <script src="app.js" defer></script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -88,8 +87,90 @@
 
   <section class="section process" id="process"><div class="wrap process-grid"><div><p class="eyebrow">04 / How it works</p><h2>From first idea<br>to online.</h2></div><ol class="steps"><li><span>01</span><div><h3>Talk through your business</h3><p>We define your audience, goals and budget, then agree on a practical scope.</p></div></li><li><span>02</span><div><h3>Design, build and refine</h3><p>You review the design and content before the site goes live.</p></div></li><li><span>03</span><div><h3>Launch with a clear next step</h3><p>Get your website online and choose the ongoing help that fits your business.</p></div></li></ol></div></section>
 
-  <section class="section contact dark" id="contact"><div class="wrap contact-grid"><div><p class="eyebrow">05 / Your next step</p><h2>Let’s give your<br>business a better<br><em>first impression.</em></h2><p>Tell me what you do, who you want to reach and what you need help with. A short project brief is a good place to start.</p><div class="contact-location">Based in Langley, BC<br>Helping businesses across Metro Vancouver.</div><a class="contact-email" href="mailto:strongweb11@gmail.com">strongweb11@gmail.com</a></div><div class="brief-card"><h3>Get your free quote</h3><p>Tell me about your project, then email your enquiry.</p><form id="brief-form"><label for="business">Business name</label><input id="business" name="business" autocomplete="organization" placeholder="Your business" required maxlength="120"><label for="service">What do you need?</label><select id="service" name="service"><option>Website launch</option><option>Local business starter</option><option>Website care</option><option>Google Business Profile support</option><option>Marketing essentials</option><option>I’m not sure yet</option></select><label for="goal">What would you like to achieve?</label><textarea id="goal" name="goal" rows="3" placeholder="Tell me a little about your project…" required maxlength="3000"></textarea><button class="button primary" type="submit">Prepare my enquiry</button><p class="form-note">Review your brief, then open a draft in your email app.</p></form><div id="brief-result" hidden><p class="result-heading">Your project brief</p><textarea id="brief-output" rows="8" readonly aria-label="Your completed project brief"></textarea><div class="result-actions"><a class="button navy" id="email-brief" href="mailto:strongweb11@gmail.com">Open email draft</a><button class="button outline" id="copy-brief" type="button">Copy brief</button><button class="text-button" id="edit-brief" type="button">Edit details</button></div><p id="copy-status" role="status" aria-live="polite">Review your enquiry and send it from your email app.</p></div></div></div></section>
+  <section class="section contact dark" id="contact"><div class="wrap contact-grid"><div><p class="eyebrow">05 / Your next step</p><h2>Let’s give your<br>business a better<br><em>first impression.</em></h2><p>Tell me what you do, who you want to reach and what you need help with. A short project brief is a good place to start.</p><div class="contact-location">Based in Langley, BC<br>Helping businesses across Metro Vancouver.</div><a class="contact-email" href="mailto:strongweb11@gmail.com">strongweb11@gmail.com</a></div><div class="brief-card">
+<h3>Get your free quote</h3><p>Tell me about your project and send your enquiry directly.</p>
+<form id="brief-form" action="https://formspree.io/f/myezrajy" method="POST">
+<input type="hidden" name="_subject" value="New Strong Web website enquiry">
+<label for="name">Your name</label><input id="name" name="name" autocomplete="name" placeholder="Your name" required maxlength="120">
+<label for="email">Your email</label><input id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required maxlength="160">
+<label for="business">Business name</label><input id="business" name="business" autocomplete="organization" placeholder="Your business" required maxlength="120">
+<label for="service">What do you need?</label><select id="service" name="service"><option>Website launch</option><option>Local business starter</option><option>Website care</option><option>Google Business Profile support</option><option>Marketing essentials</option><option>I’m not sure yet</option></select>
+<label for="goal">What would you like to achieve?</label><textarea id="goal" name="goal" rows="3" placeholder="Tell me a little about your project…" required maxlength="3000"></textarea>
+<button class="button primary" type="submit">Send inquiry</button>
+<p class="form-note">Your enquiry will be sent directly to Strong Web.</p>
+<p id="form-status" role="status" aria-live="polite" aria-atomic="true"></p>
+</form></div></div></section>
 </main>
 <footer class="footer dark"><div class="wrap footer-inner"><a class="brand footer-brand" href="#home"><img class="brand-image" src="assets/strong-web-logo.svg" alt="Strong Web" width="490" height="88"></a><p>Thoughtful websites. Practical marketing. Fair pricing.</p><span>© 2026 Strong Web</span></div></footer>
+<script>
+(() => {
+"use strict";
+const menuButton = document.querySelector('.menu-toggle');
+const navigation = document.querySelector('#navigation');
+document.querySelectorAll('.brand-image').forEach(image => {
+  image.src = 'assets/strong-web-user-logo.png';
+  image.alt = 'Strong Web logo';
+});
+function closeMenu() { navigation.classList.remove('open'); menuButton.setAttribute('aria-expanded', 'false'); }
+menuButton.addEventListener('click', () => { const open = navigation.classList.toggle('open'); menuButton.setAttribute('aria-expanded', String(open)); });
+navigation.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
+document.addEventListener('keydown', event => { if (event.key === 'Escape' && navigation.classList.contains('open')) { closeMenu(); menuButton.focus(); } });
+const packagePrices = {
+  'Website launch': 'Starting at $499',
+  'Local business starter': 'Starting at $899',
+  'Website care': '$79 / month'
+};
+document.querySelectorAll('.package').forEach(card => {
+  const title = card.querySelector('h3')?.textContent.trim();
+  const price = packagePrices[title];
+  if (!price) return;
+  const priceTag = document.createElement('p');
+  priceTag.className = 'package-price';
+  priceTag.textContent = price;
+  card.querySelector('h3').insertAdjacentElement('afterend', priceTag);
+});
+document.querySelectorAll('.choose-package').forEach(link => link.addEventListener('click', () => {
+  document.querySelector('#service').value = link.dataset.package;
+}));
+const form = document.querySelector('#brief-form');
+const status = document.querySelector('#form-status');
+const submitButton = form.querySelector('button[type="submit"]');
+let sending = false;
+form.addEventListener('submit', async event => {
+  event.preventDefault();
+  if (sending || !form.reportValidity()) return;
+  sending = true;
+  submitButton.disabled = true;
+  submitButton.textContent = 'Sending…';
+  form.setAttribute('aria-busy', 'true');
+  status.textContent = 'Sending your enquiry…';
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), 30000);
+  try {
+    const response = await fetch(form.action, {
+      method: 'POST',
+      body: new FormData(form),
+      headers: { 'Accept': 'application/json' },
+      signal: controller.signal
+    });
+    if (!response.ok) {
+      status.textContent = 'Your enquiry could not be sent. Please try again or email strongweb11@gmail.com.';
+      return;
+    }
+    form.reset();
+    status.textContent = 'Thank you! Your enquiry has been sent successfully.';
+  } catch (error) {
+    status.textContent = 'We could not confirm delivery. Your details are still here. Please check your connection, then try again, or email strongweb11@gmail.com.';
+  } finally {
+    clearTimeout(timeout);
+    sending = false;
+    submitButton.disabled = false;
+    submitButton.textContent = 'Send inquiry';
+    form.removeAttribute('aria-busy');
+  }
+});
+
+})();
+</script>
 </body>
 </html>
