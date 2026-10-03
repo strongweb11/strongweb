@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="490" height="88" viewBox="0 0 490 88" role="img" aria-labelledby="logo-title">
+  <title id="logo-title">Strong Web</title>
+  <g fill="#d5ef95">
+    <path d="M60 10H19L8 21V36L20 48H44L50 54V61H8V76H51L65 62V48L53 36H29L23 30V25H60Z"/>
+    <path d="M68 10H84L94 50L107 20H118L131 50L141 10H157L140 76H123L112 48L101 76H84Z"/>
+  </g>
+  <text x="177" y="60" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="43" font-weight="800" letter-spacing="0.2">STRONG WEB</text>
+</svg>
