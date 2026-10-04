@@ -8,6 +8,23 @@
   <title>Strong Web — Websites at a fair price</title>
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23101e34'/%3E%3Cpath d='M10 8h13v4H12v2h8a5 5 0 0 1 0 10H7v-4h13v-2h-8a5 5 0 0 1-2-10z' fill='%23d5ef95'/%3E%3C/svg%3E">
   <link rel="stylesheet" href="styles.css">
+
+  <style>
+    .faq-section{background:var(--paper,#f4f6fa)}
+    .faq-list{max-width:920px;margin:0 auto;border-top:1px solid var(--line,#dce1e8)}
+    .faq-item{border-bottom:1px solid var(--line,#dce1e8)}
+    .faq-item summary{position:relative;cursor:pointer;padding:24px 48px 24px 0;font-size:1.125rem;font-weight:600;line-height:1.5;list-style:none;color:var(--ink,#16243b)}
+    .faq-item summary::-webkit-details-marker{display:none}
+    .faq-item summary::after{content:'+';position:absolute;right:8px;top:21px;font-size:1.5rem;font-weight:400}
+    .faq-item[open] summary::after{content:'−'}
+    .faq-item summary:focus-visible{outline:3px solid #5b8bcc;outline-offset:4px}
+    .faq-answer{padding:0 38px 24px 0;color:var(--muted,#566378);max-width:800px}
+    .faq-answer a{color:var(--navy,#101e34);text-decoration:underline;text-underline-offset:3px}
+    .marketing-showcase .marketing-description{font-size:.9375rem;color:#b6c5d7;margin-top:24px}
+    .marketing-showcase .marketing-cta{margin-top:24px}
+    .brief-card .field-help{font-size:.8125rem;color:#687486;margin-top:6px;line-height:1.5}
+    @media(max-width:760px){.faq-item summary{font-size:1rem;padding-block:20px}.faq-item summary::after{top:17px}.faq-answer{padding-right:10px}}
+  </style>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -16,7 +33,7 @@
     <a class="brand" href="#home" aria-label="Strong Web, home"><img class="brand-image" src="assets/strong-web-logo.svg" alt="Strong Web" width="490" height="88"></a>
     <button class="menu-toggle" aria-controls="navigation" aria-expanded="false">Menu</button>
     <nav id="navigation" aria-label="Main navigation">
-      <a href="#services">Services</a><a href="#work">Selected work</a><a href="#pricing">Pricing</a><a class="nav-cta" href="#contact">Let’s talk</a>
+      <a href="#services">Services</a><a href="#work">Selected work</a><a href="#pricing">Pricing</a><a href="#faq">FAQ</a><a class="nav-cta" href="#contact">Let’s talk</a>
     </nav>
   </div>
 </header>
@@ -31,7 +48,7 @@
           <div class="actions"><a class="button primary" href="#contact">Get a free quote</a><a class="text-link" href="#work">Explore my work</a></div>
         </div>
         <aside class="hero-showcase" aria-label="Responsive design concept">
-          <figure class="hero-art"><img src="assets/strong-web-responsive-devices.png" alt="Laptop and phone displaying coordinated navy, white and lime designs" width="1536" height="1024" fetchpriority="high"></figure>
+          <figure class="hero-art"><img src="assets/strong-web-responsive-devices.png" alt="Laptop and phone displaying a modern responsive website concept" width="1536" height="1024" fetchpriority="high"></figure>
           <a class="featured-mini" href="#work"><span class="eyebrow">Featured project</span><strong>Vantage Driving</strong><span>Driving school · Langley, BC</span></a>
         </aside>
       </div>
@@ -53,12 +70,12 @@
       <div class="service-grid">
         <article class="service-card"><span class="service-index">01 / Your website</span><h3>Web design<br>& redesign</h3><p>A clear, professional home for your business. Built around your services and the actions you want customers to take.</p><ul><li>Business websites and landing pages</li><li>Responsive mobile layouts</li><li>Clear service information and contact links</li></ul></article>
         <article class="service-card"><span class="service-index">02 / Your local presence</span><h3>Google Business<br>Profile support</h3><p>Help eligible local businesses present accurate, useful information where customers are searching.</p><ul><li>Profile setup and information updates</li><li>Service descriptions and photo organization</li><li>Review links and QR materials</li></ul></article>
-        <article class="service-card"><span class="service-index">03 / Your marketing</span><h3>Marketing<br>essentials</h3><p>A consistent look across the things customers see, from their first social post to the card they take home.</p><ul><li>Business cards, flyers and QR codes</li><li>Branded social media post templates</li><li>Business page setup and visual updates</li></ul></article>
+        <article class="service-card"><span class="service-index">03 / Your marketing</span><h3>Marketing<br>essentials</h3><p>A consistent look across the things customers see, from their first social post to the card they take home.</p><ul><li>Business card and flyer design</li><li>Custom QR codes with your logo</li><li>Branded social media post templates</li><li>Business page setup and visual updates</li></ul></article>
         <article class="service-card"><span class="service-index">04 / Your next chapter</span><h3>Ongoing<br>website care</h3><p>Your business changes. Keep your website’s services, photos and information up to date as it grows.</p><ul><li>Text, image and pricing updates</li><li>New sections and seasonal offers</li><li>Monthly support with an agreed scope</li></ul></article>
       </div>
       <figure class="marketing-showcase">
-        <img src="assets/strong-web-marketing-materials.png" alt="Strong Web concept business cards, folded flyer and phone in navy, white and lime" width="1536" height="1024" loading="lazy">
-        <figcaption><p class="eyebrow">One consistent identity</p><h3>From your website<br>to the card<br>they take home.</h3><p>Business cards, flyers and social media visuals that look like they belong to the same business.</p></figcaption>
+        <img src="assets/strong-web-marketing-materials.png" alt="Strong Web business card and flyer concepts with a phone demonstrating QR code scanning" width="1536" height="1024" loading="lazy">
+        <figcaption><p class="eyebrow">Print meets digital</p><h3>Business Cards,<br>Flyers &amp;<br>Custom QR Codes</h3><p class="marketing-description">Bring your brand into the real world with professional business cards, flyers and custom QR codes that connect customers to your website, contact details, menu or booking page.</p><a class="button primary choose-package marketing-cta" href="#contact" data-package="Marketing essentials">Request a design</a></figcaption>
       </figure>
     </div>
   </section>
@@ -87,14 +104,30 @@
 
   <section class="section process" id="process"><div class="wrap process-grid"><div><p class="eyebrow">04 / How it works</p><h2>From first idea<br>to online.</h2></div><ol class="steps"><li><span>01</span><div><h3>Talk through your business</h3><p>We define your audience, goals and budget, then agree on a practical scope.</p></div></li><li><span>02</span><div><h3>Design, build and refine</h3><p>You review the design and content before the site goes live.</p></div></li><li><span>03</span><div><h3>Launch with a clear next step</h3><p>Get your website online and choose the ongoing help that fits your business.</p></div></li></ol></div></section>
 
-  <section class="section contact dark" id="contact"><div class="wrap contact-grid"><div><p class="eyebrow">05 / Your next step</p><h2>Let’s give your<br>business a better<br><em>first impression.</em></h2><p>Tell me what you do, who you want to reach and what you need help with. A short project brief is a good place to start.</p><div class="contact-location">Based in Langley, BC<br>Helping businesses across Metro Vancouver.</div><a class="contact-email" href="mailto:strongweb11@gmail.com">strongweb11@gmail.com</a></div><div class="brief-card">
+  <section class="section faq-section" id="faq" aria-labelledby="faq-heading"><div class="wrap">
+    <div class="section-heading"><div><p class="eyebrow">05 / Frequently asked questions</p><h2 id="faq-heading">A few answers.<br>A clearer next step.</h2></div><p>What to expect when we work together, from your first website to the marketing materials around it.</p></div>
+    <div class="faq-list">
+      <details class="faq-item"><summary>How much does a website cost?</summary><div class="faq-answer"><p>Website launch projects start at $499, the Local business starter package starts at $899, and Website care is $79 per month. The final quote depends on the pages, content and features you need. The scope, price and any ongoing costs are agreed before work begins. Printing, domains, hosting and paid advertising are discussed separately where needed.</p></div></details>
+      <details class="faq-item"><summary>How long does it take to build a website?</summary><div class="faq-answer"><p>The timeline depends on the size of your website, the features you need and when your content is ready. After discussing your project, I will confirm a realistic schedule with you before work begins.</p></div></details>
+      <details class="faq-item"><summary>Will my website work on phones and tablets?</summary><div class="faq-answer"><p>Yes. Websites are designed with responsive layouts so visitors can read your content, explore your services and contact you on phones, tablets and desktop computers.</p></div></details>
+      <details class="faq-item"><summary>Can you redesign my existing website?</summary><div class="faq-answer"><p>Yes. I can review your current website and discuss improvements to its layout, content and mobile experience. The best approach depends on your existing platform, access and goals.</p></div></details>
+      <details class="faq-item"><summary>Can you help with my domain and hosting?</summary><div class="faq-answer"><p>Yes. I can help with domain setup and connecting your website to suitable hosting. Any separate domain, hosting or third-party costs will be discussed as part of your quote.</p></div></details>
+      <details class="faq-item"><summary>Do you design business cards, flyers and custom QR codes?</summary><div class="faq-answer"><p>Yes. I can design business cards, flyers and QR codes, including a QR code with your logo. Codes can link to your website, a contact page, an online menu or a booking page. Tell me where the code should lead and how you plan to use it. Printing is quoted separately.</p></div></details>
+      <details class="faq-item"><summary>Can I change where my QR code links later?</summary><div class="faq-answer"><p>A standard static QR code stores a fixed link. If you change that link, you will need a new code. If you keep the same link and update the page behind it, the printed code still works. If you need a changeable destination, mention it when requesting a quote so we can discuss the setup and any ongoing costs.</p></div></details>
+      <details class="faq-item"><summary>How do I request a quote?</summary><div class="faq-answer"><p>Use the <a href="#contact">contact form</a> and select the service you need, or email <a href="mailto:strongweb11@gmail.com">strongweb11@gmail.com</a>. Tell me about your business, your goals and any existing website. For a QR code, include the destination link. The initial quote is free.</p></div></details>
+    </div>
+  </div></section>
+
+  <section class="section contact dark" id="contact"><div class="wrap contact-grid"><div><p class="eyebrow">06 / Your next step</p><h2>Let’s give your<br>business a better<br><em>first impression.</em></h2><p>Tell me what you do, who you want to reach and what you need help with. A short project brief is a good place to start.</p><div class="contact-location">Based in Langley, BC<br>Helping businesses across Metro Vancouver.</div><a class="contact-email" href="mailto:strongweb11@gmail.com">strongweb11@gmail.com</a></div><div class="brief-card">
 <h3>Get your free quote</h3><p>Tell me about your project and send your enquiry directly.</p>
 <form id="brief-form" action="https://formspree.io/f/myezrajy" method="POST">
 <input type="hidden" name="_subject" value="New Strong Web website enquiry">
 <label for="name">Your name</label><input id="name" name="name" autocomplete="name" placeholder="Your name" required maxlength="120">
 <label for="email">Your email</label><input id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required maxlength="160">
 <label for="business">Business name</label><input id="business" name="business" autocomplete="organization" placeholder="Your business" required maxlength="120">
-<label for="service">What do you need?</label><select id="service" name="service"><option>Website launch</option><option>Local business starter</option><option>Website care</option><option>Google Business Profile support</option><option>Marketing essentials</option><option>I’m not sure yet</option></select>
+<label for="service">What do you need?</label><select id="service" name="service"><option>Website launch</option><option>Local business starter</option><option>Website care</option><option>Google Business Profile support</option><option>Marketing essentials</option><option>Custom QR Code</option><option>I’m not sure yet</option></select>
+<label for="project-url">Website or QR destination link (optional)</label><input id="project-url" name="project_url" type="url" inputmode="url" autocomplete="url" placeholder="https://yourwebsite.com" maxlength="2048" aria-describedby="project-url-help">
+<p class="field-help" id="project-url-help">For a custom QR code, paste the full link it should open, including https://.</p>
 <label for="goal">What would you like to achieve?</label><textarea id="goal" name="goal" rows="3" placeholder="Tell me a little about your project…" required maxlength="3000"></textarea>
 <button class="button primary" type="submit">Send inquiry</button>
 <p class="form-note">Your enquiry will be sent directly to Strong Web.</p>
